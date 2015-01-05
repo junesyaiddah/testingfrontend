@@ -1,0 +1,146 @@
+@import "elements.less"; 
+
+
+
+@color-base: #A8C0BA;
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+@height:100px;
+@june-color:#32B40D;
+@light-green:#BBC678;
+
+
+@padding-base-vertical:     6px;
+@padding-base-horizontal:   12px;
+
+@top-color: #EEE;
+@right-color: #EEE;
+@bottom-color: #EEE; 
+@left-color: #EEE;
+
+
+@x-axis: 0;
+@y-axis: 1px;
+@blur: 2px;
+@alpha: 0.1;
+
+
+@black:									 #414042;
+@gray-darker:            lighten(#000, 13.5%); // #222
+@gray-dark:              lighten(#000, 20%);   // #333
+@gray:                   lighten(#000, 33.5%); // #555
+@gray-light:             lighten(#000, 46.7%); // #777
+@gray-lighter:           lighten(#000, 93.5%); // #eee
+
+@brand-primary:         #428bca;
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+
+@radius: 8px;
+
+
+body {
+	margin: 0px;
+	background-color: @june-color;
+}
+
+#header {
+  color: @light-blue;
+  background-color: @color-base;
+  height: @height *2;
+}
+
+  
+.class1 {  
+    background-color: @color-base;  
+}  
+.class2 {  
+    background-color: #fff;  
+    color: @color-base;  
+}  
+.class3 {  
+    border: 1px solid @color-base;  
+}  
+
+
+nav {  
+    height:@height *4; 
+    width: 100%;  
+    background: #455868;  
+    border-bottom: 2px solid #283744;  
+    li {  
+        width: 600px;  
+        height: 40px;
+        background-color: @nice-blue;  
+        a {  
+            color: #fff;  
+            line-height: 40px;  
+            text-shadow: 1px 1px 0px #283744; 
+            text-decoration: none; 
+        }  
+    }  
+} 
+
+
+
+.link-nav { // Section control override
+	li {
+		width: 400px;
+		height: 50px;
+		margin: 17px;
+		background-color: @light-green;
+		a {
+			span {
+				width: 22px;
+				height: 22px;
+				top: 0;
+				left: 0;
+				border: 5px solid #939598;
+				background: white;
+				list-style:none;
+			}
+			&.active, &:hover {
+				span {
+					background:@brand-warning;
+					&:after {
+						content: '';
+						display: block;
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						margin: 4px;
+						background: #58595B;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.button {
+  &-ok {
+    background-color:@color-base;
+    padding:@padding-base-vertical;
+    border-top: solid 2px @top-color;
+    border-radius: @radius;
+    width: 200px;
+	  &.text{
+	  	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 5, @alpha);
+	  	color:@brand-danger;
+	  	font-size: 18px; 
+	  	}
+	}
+
+  	
+  &-cancel {
+    background-color:@light-green;
+  }
+
+  &-custom {
+    background-color:@nice-blue;
+    color:#000;
+  }
+} 
